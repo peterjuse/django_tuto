@@ -14,8 +14,8 @@ class Poll(models.Model):
 		return	self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 	
 	fue_recientemente_publicado.admin_order_field = 'pub_date'
-	fue_recientemente_publicado.boolean = True
 	fue_recientemente_publicado.short_description = 'Published recently?'
+	fue_recientemente_publicado.boolean = True
 
 class Choice(models.Model):
 	poll = models.ForeignKey(Poll)
